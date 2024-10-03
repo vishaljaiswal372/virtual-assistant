@@ -50,10 +50,10 @@ function takeCommand(message){
         speak("i am virtual assistant ,created by Ayush Sir")
     }
     else if (message.includes("youtube")) {
-        speak("opening youtube...");
     
         const apiKey = "AIzaSyAga6BmVJuSp0mw1T9zOH3YDC4Ww9cTpkw"; // Correct API key variable
         const query = message.replace("youtube",""); // Get the search term after "youtube"
+        speak(message);
         
         fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&key=${apiKey}`)
             .then(response => response.json())
