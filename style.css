@@ -1,58 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100%;
     height: 100%;
     background-color: white;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap:30px;
+    gap: 30px;
     flex-direction: column;
+    padding: 20px; /* Added padding for smaller screens */
 }
-#logo{
+
+#logo {
     width: 30vw;
     transition: opacity 1s ease-in-out; /* Smooth fade effect */
     opacity: 1; /* Visible by default */
 }
-h1{
+
+h1 {
     color: rgb(91, 149, 200);
     font-family: "Protest Guerrilla", sans-serif;
+    text-align: center; /* Center text for responsiveness */
 }
-#name{
-    color:rgb(212, 43, 122);
-    font-size: 45px;
+
+#name, #va {
+    font-size: 2.5rem; /* Use rem for scalable font size */
+    text-align: center; /* Center text for responsiveness */
 }
-#va{
-    color:rgb(43, 206, 212);
-    font-size: 45px; 
+
+#name {
+    color: rgb(212, 43, 122);
 }
-#voice{
+
+#va {
+    color: rgb(43, 206, 212);
+}
+
+#voice {
     width: 180px;
     display: none;
     height: 180px;
 }
-#btn{
-width: 30%;
-background: linear-gradient(to right,rgb(21, 145, 207),rgb(201, 41, 116));
-padding: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
-font-size: 20px;
-border-radius: 20px;
-color: white;
-box-shadow: 2px 2px 10px rgb(21, 145, 207),2px 2px 10px rgb(201, 41, 116);
-border: none;
-transition: all 0.5s;
-cursor: pointer;
+
+#btn {
+    width: 30%;
+    background: linear-gradient(to right, rgb(21, 145, 207), rgb(201, 41, 116));
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 2px 2px 10px rgb(21, 145, 207), 2px 2px 10px rgb(201, 41, 116);
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
 }
-#btn:hover{
-    box-shadow: 2px 2px 20px rgb(21, 145, 207),2px 2px 20px rgb(201, 41, 116);
+
+#btn:hover {
+    box-shadow: 2px 2px 20px rgb(21, 145, 207), 2px 2px 20px rgb(201, 41, 116);
     letter-spacing: 2px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    #logo {
+        width: 40vw; /* Adjust logo size for tablets */
+    }
+    #btn {
+        width: 40%; /* Make the button wider for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #logo {
+        width: 50vw; /* Adjust logo size for smaller screens */
+    }
+    #name, #va {
+        font-size: 2rem; /* Adjust text size for smaller screens */
+    }
+    #btn {
+        width: 50%; /* Adjust button width for mobile screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #logo {
+        width: 60vw; /* Adjust logo size for small mobile screens */
+    }
+    #name, #va {
+        font-size: 1.8rem; /* Adjust text size for small mobile screens */
+    }
+    #btn {
+        width: 70%; /* Make button cover more width on mobile */
+        padding: 6px; /* Adjust padding for smaller buttons */
+        font-size: 0.9rem; /* Smaller font for smaller screens */
+    }
 }
